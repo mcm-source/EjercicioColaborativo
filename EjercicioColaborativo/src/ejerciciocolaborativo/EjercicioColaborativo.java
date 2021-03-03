@@ -18,6 +18,7 @@ public class EjercicioColaborativo {
     public static void main(String[] args) {
         System.out.println("Proba bea");
         System.out.println("Proba Xoel");
+        System.out.println("Proba Bea");
     }
     
 }

@@ -21,6 +21,8 @@ public class EjercicioColaborativo {
         System.out.println("Proba Bea");
         System.out.println("Proba Xoel 2");
 
+        System.out.println("Proba para sincronizar");
+        
     }
     
 }

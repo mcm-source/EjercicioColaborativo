@@ -1,4 +1,4 @@
-package ejerciciocolaborativo.Clases;
+package Clases;
 
 public class AlumnoInternacional {
 }

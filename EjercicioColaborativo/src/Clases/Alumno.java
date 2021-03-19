@@ -9,7 +9,7 @@ package Clases;
  *
  * @author marti
  */
-public class Alumno  extends  Persona{
+public class Alumno extends Persona {
 
     private String codigo;
     private String nombreModulo1;
@@ -17,7 +17,8 @@ public class Alumno  extends  Persona{
     private String nombreModulo2;
     private float notaModulo2;
 
-    public Alumno(String codigo, String nombreModulo1, float notaModulo1, String nombreModulo2, float notaModulo2, String nombre, String dni, String numeroTelefono) {
+    public Alumno(String codigo, String nombreModulo1, float notaModulo1, String nombreModulo2,
+            float notaModulo2, String nombre, String dni, String numeroTelefono) {
         super(nombre, dni, numeroTelefono);
         this.codigo = codigo;
         this.nombreModulo1 = nombreModulo1;
@@ -65,15 +66,5 @@ public class Alumno  extends  Persona{
     public void setNotaModulo2(float notaModulo2) {
         this.notaModulo2 = notaModulo2;
     }
-    
-    
-
-    
-    
-
-
-    
-    
-    
 
 }

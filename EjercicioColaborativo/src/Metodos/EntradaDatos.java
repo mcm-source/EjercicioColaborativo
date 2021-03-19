@@ -5,7 +5,7 @@
  */
 package Metodos;
 
-import NodoALumno.NodoAlumno;
+import Clases.Alumno;
 import static Validaciones.ValidacionesDNI.validarDNI;
 import static Validaciones.ValidacionesModulos.validarModulo;
 import java.io.BufferedReader;
@@ -19,11 +19,17 @@ import java.util.Scanner;
  */
 public class EntradaDatos {
 
-    public static NodoAlumno pedirDatosAlumno() {
+    public static Alumno pedirDatosAlumno() {
 
         String DNI;
         String nombreAlumno;
-        String Modulo;
+        String codigo;
+        String numeroTelefono;
+        String nombreModulo1;
+        float notaModulo1;
+        String nombreModulo2;
+        float notaModulo2;
+
         int nota;
 
         do {
@@ -32,11 +38,15 @@ public class EntradaDatos {
         nombreAlumno = pedirDatosString("Introduzca el nombre del alumno");
 
         do {
-            Modulo = pedirDatosString("Introduzca el código del modulo del alumno");
-        } while (!validarModulo(Modulo));
-        nota = Integer.parseInt(pedirDatosString("Introduzca la nota del alumno"));
+            codigo = pedirDatosString("Introduzca el código  del alumno");
+        } while (!validarModulo(codigo));
+        numeroTelefono = pedirDatosString("Introduzca el numero de telefono");
+        nombreModulo1 = pedirDatosString("Introduzca el nombre del modulo 1");
+        notaModulo1 = Integer.parseInt(pedirDatosString("Introduzca la nota del modulo 1"));
+        nombreModulo2 = pedirDatosString("Introduzca el nombre del modulo 2");
+        notaModulo2 = Integer.parseInt(pedirDatosString("Introduzca la nota del modulo 2"));
 
-        return new NodoAlumno(Modulo, nombreAlumno, DNI);
+        return new Alumno(codigo, nombreModulo1, notaModulo1, nombreModulo2, notaModulo2, nombreAlumno, DNI, numeroTelefono);
 
     }
 

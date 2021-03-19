@@ -29,9 +29,6 @@ public class EntradaDatos {
         float notaModulo1;
         String nombreModulo2;
         float notaModulo2;
-
-        int nota;
-
         do {
             DNI = pedirDatosString("Introduzca DNI del Alumno");
         } while (!validarDNI(DNI));

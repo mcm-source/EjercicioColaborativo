@@ -15,23 +15,28 @@ import java.io.InputStreamReader;
  */
 public class MenusPrograma {
 
-    public static byte menu() throws IOException {
+    public static byte menu() {
 
-        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("\n******** Menu programa ***********");
-        System.out.println("1.Insertar alumnos en pila ");
-        System.out.println("2.Borrado de un alumno.");
-        System.out.println("3.Visualiar la pila completa de alumnos");
-        System.out.println("4.Modificacion de la nota de un alumno.");
-        System.out.println("5.Listar los alumnos con nota mayor de 6.");
-        System.out.println("6.Salir.");
-        System.out.println("\nIntroduce la opcion deseada:");
-        byte opcionMenu = Byte.parseByte(leer.readLine());
-        return opcionMenu;
+        try {
+            BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("\n******** Menu programa ***********");
+            System.out.println("1.Inicializar el listado de los alumnos ");
+            System.out.println("2.Insertar alumnos en el ArrayList");
+            System.out.println("3.Ordenar los alumnos por nombre");
+            System.out.println("4.Busqueda de alumno por nombre");
+            System.out.println("5.Visualizacion del arrayList de alumnos");
+            System.out.println("6.Salir.");
+            System.out.println("\nIntroduce la opcion deseada:");
+            byte opcionMenu = Byte.parseByte(leer.readLine());
+            return opcionMenu;
+        } catch (IOException | NumberFormatException e) {
+            System.out.println(e.getMessage());
+            return 6;
+        }
 
     }
 
-    public static boolean pedirValidacion(String textoAMostrar)  {
+    public static boolean pedirValidacion(String textoAMostrar) {
 
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class BusquedaDicotomica {
 
-    public static void buscarAlumno(ArrayList<Alumno> listadoAlumnos) throws IOException {
+    public static void buscarAlumno(ArrayList<Alumno> listadoAlumnos) {
 
         ArrayList<Alumno> alumnosParaBusqueda = Ordenacion.ordenacionAscendente(listadoAlumnos);
         int posicionInicial = 0;

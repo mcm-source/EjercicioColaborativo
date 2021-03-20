@@ -1,5 +1,6 @@
 package Clases;
 
+/**@author CECA*/
 public class Docente extends Persona{
 
     private String materia;

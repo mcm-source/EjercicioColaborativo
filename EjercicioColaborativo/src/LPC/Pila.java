@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+/**@author CECA */
 public class Pila {
     public static NodoAlumno crear(NodoAlumno p,BufferedReader leer) throws IOException{
         System.out.println("Desea crear lista nueva?"

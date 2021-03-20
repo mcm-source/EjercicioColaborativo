@@ -2,6 +2,7 @@ package LPC;
 
 import Clases.Alumno;
 
+/**@author CECA*/
 public class NodoAlumno extends Alumno{
 
     private NodoAlumno siguiente;

@@ -6,6 +6,7 @@
 package ejerciciocolaborativo;
 
 import Clases.Alumno;
+import LPC.Cola;
 import Metodos.MenusPrograma;
 import static Metodos.MenusPrograma.menu;
 import MetodosMenuArrayList.BusquedaDicotomica;
@@ -16,19 +17,25 @@ import static MetodosMenuArrayList.InsertarAlumnos.insertarAlumno;
 import static MetodosMenuArrayList.Ordenacion.ordenacionAscendente;
 import MetodosMenuArrayList.Visualizacion;
 import static MetodosMenuArrayList.Visualizacion.visualizarListadoAlumnos;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author marti
  */
 public class EjercicioColaborativo {
+    
+    private static Cola cola = new Cola();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+       
+        /** @author Beatriz*/
         byte op=0;
         
         do{
@@ -40,9 +47,16 @@ public class EjercicioColaborativo {
                 case 2://Usar lista"
                     
                     break;
-                case 3://Usar cola"
-                    
+                case 3:{
+                    try {
+                        //Usar cola"
+                        trabajarCola();
+                    } catch (IOException ex) {
+                        System.out.println(ex.getMessage());
+                    }
                     break;
+                }
+
                 case 4://Usar pila"
                     
                     break;
@@ -86,5 +100,28 @@ public class EjercicioColaborativo {
             }
 
         } while (opcion != 0);
+    }
+    
+    /** @author Beatriz*/
+    public static void trabajarCola() throws IOException{
+        byte op=0;
+        
+        do{
+            op=MenusPrograma.menuCola(); 
+            switch(op){
+                case 1://Insertar
+                    cola.insertar();
+                    break;
+                case 2://Consultar
+                    cola.consultar();
+                    break;
+                case 3://Borrar
+                    cola.borrar();
+                    break;
+                default:
+                    op = 0;
+                    break;
+            }
+        }while (op!=0);
     }
 }

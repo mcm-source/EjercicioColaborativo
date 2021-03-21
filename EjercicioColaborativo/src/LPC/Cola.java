@@ -1,6 +1,7 @@
 package LPC;
 
 import Metodos.EntradaDatos;
+import Metodos.Visualizacion;
 import java.io.*;
 
 /** @author Beatriz*/
@@ -29,21 +30,21 @@ public class Cola {
     
     public void insertar()throws IOException{
         
-        String dni, nombreAlumno, codigo, nombreModulo1, nombreModulo2, telefono;
+        String dni, codigo, nombreAlumno, numeroTelefono, nombreModulo1, nombreModulo2;
         float notaModulo1, notaModulo2;
         
         NodoAlumno nuevoNodoAlumno;
-        
-        codigo=EntradaDatos.pedirDatosString("Introduce nombre");
-        nombreModulo1=EntradaDatos.pedirDatosString("Introduce nombre del modulo 1");
-        notaModulo1=Float.parseFloat(EntradaDatos.pedirDatosString("Introduce nota del modulo 1"));
-        nombreModulo2=EntradaDatos.pedirDatosString("Introduce nombre del modulo 2");
-        notaModulo2=Float.parseFloat(EntradaDatos.pedirDatosString("Introduce nota del modulo 2"));
-        nombreAlumno=EntradaDatos.pedirDatosString("Introduce nombre del alumno");
-        dni=EntradaDatos.pedirDatosString("Introduce nombre del alumno");
-        telefono=EntradaDatos.pedirDatosString("Introdice telefono");
+    //quiero añadir bucle para insertar más alumnos
+        dni=EntradaDatos.pedirDatosString("Introduzca DNI del alumno");
+        codigo=EntradaDatos.pedirDatosString("Introduzca el código del alumno");
+        nombreAlumno=EntradaDatos.pedirDatosString("Introduzca el nombre del alumno");
+        numeroTelefono=EntradaDatos.pedirDatosString("Introduzca el número de teléfono");
+        nombreModulo1=EntradaDatos.pedirDatosString("Introduzca el nombre del módulo 1");
+        notaModulo1=Float.parseFloat(EntradaDatos.pedirDatosString("Introduzca la nota del módulo 1"));
+        nombreModulo2=EntradaDatos.pedirDatosString("Introduzca el nombre del módulo 2");
+        notaModulo2=Float.parseFloat(EntradaDatos.pedirDatosString("Introduzca la nota del módulo 2"));
 
-        nuevoNodoAlumno=new NodoAlumno(codigo,nombreModulo1,notaModulo1,nombreModulo2,notaModulo2,nombreAlumno,dni,telefono);
+        nuevoNodoAlumno=new NodoAlumno(codigo,nombreModulo1,notaModulo1,nombreModulo2,notaModulo2,nombreAlumno,dni,numeroTelefono);
         
         if(raiz==null){     //si  vacia
             raiz=nuevoNodoAlumno;
@@ -57,24 +58,29 @@ public class Cola {
         numElementos++;
     }
     
-    public NodoAlumno consultar(){
-        return raiz;
+    public void consultar(){
+        Visualizacion.visualizacionCabeceraDatosAlumno();
+        Visualizacion.visualizacionObjetoAlumno(raiz);
     }
     
     public NodoAlumno borrar(){
+                
         if(raiz==null){     //si cola vacia
+            System.out.println("Alumno borrado");
             return null;
         }else if(raiz.getSiguiente()==null){
             NodoAlumno primero=raiz;
             raiz=null;
             
             numElementos--;
+            System.out.println("Alumno borrado");
             return primero;
         }else{
             NodoAlumno primero=raiz;
             raiz=raiz.getSiguiente();
             
             numElementos--;
+            System.out.println("Alumno borrado");
             return primero;
         }        
     }

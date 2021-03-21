@@ -6,6 +6,7 @@
 package ejerciciocolaborativo;
 
 import Clases.Alumno;
+import Metodos.MenusPrograma;
 import static Metodos.MenusPrograma.menu;
 import MetodosMenuArrayList.BusquedaDicotomica;
 import static MetodosMenuArrayList.BusquedaDicotomica.buscarAlumno;
@@ -27,12 +28,40 @@ public class EjercicioColaborativo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        byte op=0;
+        
+        do{
+            op=MenusPrograma.menuPrincipal();
+            switch(op){
+                case 1://Usar ArrayList"
+                    trabajarArrayList();
+                    break;
+                case 2://Usar lista"
+                    
+                    break;
+                case 3://Usar cola"
+                    
+                    break;
+                case 4://Usar pila"
+                    
+                    break;
+                default:
+                    op = 0;
+                    break;
+            }
+        }while (op!=0);
+       
 
-        ArrayList<Alumno> listadoAlumnos = null;
+    }
+
+    public static void trabajarArrayList(){
+         ArrayList<Alumno> listadoAlumnos = null;
 
         byte opcion = 0;
         do {
-            switch (menu()) {
+            opcion = MenusPrograma.menu();
+            switch (opcion) {
                 case 1:
                     listadoAlumnos = inicializarValoresListadoAlumno(listadoAlumnos);
                     break;
@@ -42,24 +71,20 @@ public class EjercicioColaborativo {
                 case 3:
                     listadoAlumnos = ordenacionAscendente(listadoAlumnos);
                     break;
-
                 case 4:
                     buscarAlumno(listadoAlumnos);
                     break;
                 case 5:
                     visualizarListadoAlumnos(listadoAlumnos);
                     break;
-                case 6:
-
+                case 0:
                     break;
                 default:
-                    opcion = 1;
+                    opcion = 0;
                     break;
 
             }
 
-        } while (opcion != 1);
-
+        } while (opcion != 0);
     }
-
 }

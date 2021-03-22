@@ -14,8 +14,11 @@ import java.io.InputStreamReader;
  * @author marti
  */
 public class MenusPrograma {
-    /** @author Beatriz*/
-     public static byte menuPrincipal() {
+
+    /**
+     * @author Beatriz
+     */
+    public static byte menuPrincipal() {
 
         try {
             BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
@@ -27,7 +30,7 @@ public class MenusPrograma {
                     + "\n4. Usar pila"
                     + "\n0. Salir"
                     + "\nIntroduce la opción deseada: ");
-            
+
             return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
@@ -35,8 +38,7 @@ public class MenusPrograma {
         }
 
     }
-    
-    
+
     public static byte menuArrayList() {
 
         try {
@@ -47,7 +49,8 @@ public class MenusPrograma {
             System.out.println("3.Ordenar los alumnos por nombre");
             System.out.println("4.Busqueda de alumno por nombre");
             System.out.println("5.Visualizacion del arrayList de alumnos");
-            System.out.println("6.Salir.");
+            System.out.println("6.Calcular nota media alumnos.");
+            System.out.println("7.Salir.");
             System.out.println("\nIntroduce la opcion deseada:");
             return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
@@ -57,7 +60,9 @@ public class MenusPrograma {
 
     }
 
-    /** @author Beatriz*/
+    /**
+     * @author Beatriz
+     */
     public static byte menuCola() {
 
         try {
@@ -69,7 +74,7 @@ public class MenusPrograma {
                     + "\n3. Borrar"
                     + "\n0. Salir"
                     + "\nIntroduce la opción deseada: ");
-            
+
             return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
@@ -77,7 +82,7 @@ public class MenusPrograma {
         }
 
     }
-    
+
     public static boolean pedirValidacion(String textoAMostrar) {
 
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));

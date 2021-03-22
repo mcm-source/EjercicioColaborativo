@@ -22,11 +22,11 @@ public class CalculoNotaMedia {
         for (Alumno i : listadoAlumnos) {
 
             notaModulo1 += i.getNotaModulo1();
-            notaModulo2 += i.getNotaModulo1();
+            notaModulo2 += i.getNotaModulo2();
         }
 
-        System.out.println(" Nota media modulo 1 " + (notaModulo1 / listadoAlumnos.size()));
-        System.out.println(" Nota media modulo 2 " + (notaModulo2 / listadoAlumnos.size()));
+        System.out.printf("Nota media modulo 1 %.2f%n",(notaModulo1 / listadoAlumnos.size()));
+        System.out.printf("Nota media modulo 2 %.2f ", (notaModulo2 / listadoAlumnos.size()));
 
     }
 

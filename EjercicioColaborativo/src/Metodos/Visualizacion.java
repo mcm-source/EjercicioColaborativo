@@ -23,7 +23,7 @@ public class Visualizacion {
 
     public static void visualizacionObjetoAlumno(Alumno alumno) {
 
-        System.out.printf("%n%-10s %-10s %-10s %-10s %-10f %-10s %-10f", alumno.getNombre(), alumno.getDni(),
+        System.out.printf("%n%-10s %-10s %-10s %-10s %-10.2f %-10s %-10.2f", alumno.getNombre(), alumno.getDni(),
                 alumno.getCodigo(), alumno.getNombreModulo1(), alumno.getNotaModulo1(),
                 alumno.getNombreModulo2(), alumno.getNotaModulo2());
 

@@ -13,6 +13,7 @@ import static Metodos.MenusPrograma.menuCola;
 import static Metodos.MenusPrograma.menuPrincipal;
 import MetodosMenuArrayList.BusquedaDicotomica;
 import static MetodosMenuArrayList.BusquedaDicotomica.buscarAlumno;
+import static MetodosMenuArrayList.CalculoNotaMedia.calcularNotaMediaAsignaturas;
 import MetodosMenuArrayList.InicializarArrayList;
 import static MetodosMenuArrayList.InicializarArrayList.inicializarValoresListadoAlumno;
 import static MetodosMenuArrayList.InsertarAlumnos.insertarAlumno;
@@ -92,6 +93,9 @@ public class EjercicioColaborativo {
                     visualizarListadoAlumnos(listadoAlumnos);
                     break;
                 case 6:
+                    calcularNotaMediaAsignaturas(listadoAlumnos);
+                    break;
+                case 7:
                     System.out.println("Fin del programa");
                     ejecutarPrograma = false;
                     break;

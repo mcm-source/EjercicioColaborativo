@@ -41,7 +41,7 @@ public class MenusPrograma {
 
         try {
             BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("%n%n******** Menu programa ***********");
+            System.out.println("\n\n******** Menu programa ***********");
             System.out.println("1.Inicializar el listado de los alumnos ");
             System.out.println("2.Insertar alumnos en el ArrayList");
             System.out.println("3.Ordenar los alumnos por nombre");

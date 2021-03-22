@@ -26,7 +26,7 @@ public class Informacion {
  Clase centro
 
  César:  "apodo: CECA"
- Pila
+ Pila y menú pila
  Clase AulumnoInternacional
  Clase Docente
 

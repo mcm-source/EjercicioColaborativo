@@ -1,7 +1,8 @@
 /*
 ASIGNACIONES
 Beatriz:
-Cola
+Cola y menú cola
+Clase centro
 
 César:
 Pila

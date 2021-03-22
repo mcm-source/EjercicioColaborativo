@@ -25,7 +25,7 @@ public class CalculoNotaMedia {
             notaModulo2 += i.getNotaModulo2();
         }
 
-        System.out.printf("Nota media modulo 1 %.2f%n",(notaModulo1 / listadoAlumnos.size()));
+        System.out.printf("Nota media modulo 1 %.2f%n", (notaModulo1 / listadoAlumnos.size()));
         System.out.printf("Nota media modulo 2 %.2f ", (notaModulo2 / listadoAlumnos.size()));
 
     }

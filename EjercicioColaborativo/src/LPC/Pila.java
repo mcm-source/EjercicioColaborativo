@@ -5,14 +5,13 @@ import Metodos.Visualizacion;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-/**@author CECA */
+/**
+ * @author CECA
+ * */
 public class Pila {
 
-    public static NodoAlumno crear(NodoAlumno p,BufferedReader leer) throws IOException{
-        System.out.println("Desea crear pila nueva?"
-                +"\n1.si"
-                +"\n2.no");
-        byte op=Byte.parseByte(leer.readLine());
+    public static NodoAlumno crear(NodoAlumno p,String leer) throws IOException{
+        byte op=Byte.parseByte(leer);
 
         if(op==1){
             p=null;
@@ -20,14 +19,13 @@ public class Pila {
         return p;
     }
 
-    public void push(NodoAlumno raiz) throws IOException{
-        NodoAlumno nuevoNodoAlumno=(NodoAlumno) EntradaDatos.pedirDatosAlumno();
+    public static void push(NodoAlumno raiz, NodoAlumno nodoInsertar) throws IOException{
                 if(raiz ==null){
-                    raiz= nuevoNodoAlumno;
+                    raiz= nodoInsertar;
                     raiz.setSiguiente(null);
                 }else{
-                    nuevoNodoAlumno.setSiguiente(raiz);
-                    raiz= nuevoNodoAlumno;
+                    nodoInsertar.setSiguiente(raiz);
+                    raiz= nodoInsertar;
                 }
             }
 
@@ -44,7 +42,7 @@ public class Pila {
             System.out.println("alumno creado");
         }*/
 
-    public void pop(NodoAlumno raiz){
+    public static void pop(NodoAlumno raiz){
 
         NodoAlumno info=null;
         if(raiz==null){

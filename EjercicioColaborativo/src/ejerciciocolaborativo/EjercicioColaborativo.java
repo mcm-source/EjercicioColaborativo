@@ -7,9 +7,13 @@ package ejerciciocolaborativo;
 
 import Clases.Alumno;
 import LPC.Cola;
+import LPC.NodoAlumno;
+import LPC.Pila;
+import Metodos.EntradaDatos;
 import Metodos.MenusPrograma;
 import static Metodos.MenusPrograma.menuArrayList;
 import static Metodos.MenusPrograma.menuCola;
+import static Metodos.MenusPrograma.menuPila;
 import static Metodos.MenusPrograma.menuPrincipal;
 import MetodosMenuArrayList.BusquedaDicotomica;
 import static MetodosMenuArrayList.BusquedaDicotomica.buscarAlumno;
@@ -39,6 +43,7 @@ public class EjercicioColaborativo {
     public static void main(String[] args) {
 
         ArrayList<Alumno> listadoAlumnos = new ArrayList<Alumno>();
+        NodoAlumno pilaAlumnos= null;
         byte op = 0;
 
         do {
@@ -137,5 +142,35 @@ public class EjercicioColaborativo {
                     break;
             }
         } while (op != 0);
+    }
+
+    /**
+     * @author CECA
+     * */
+    public static void trabajarPila(NodoAlumno pilaAlumnos)throws Exception{
+        byte option=menuPila();
+        do{
+            switch (option){
+                case 1:
+                    Pila.crear(pilaAlumnos,EntradaDatos.pedirDatosString("Desea crear pila nueva?" +
+                            "\n1. si" +
+                            "\n2. no"));
+                    break;
+                case 2:
+                    Pila.push(pilaAlumnos,(NodoAlumno) EntradaDatos.pedirDatosAlumno());
+                    break;
+                case 3:
+                    Pila.pop(pilaAlumnos);
+                    break;
+                case 4:
+                    Pila.verPila(pilaAlumnos);
+                    break;
+                case 5:
+                    Pila.verElementoSuperior(pilaAlumnos);
+                    break;
+                default:
+                    break;
+            }
+        }while (option!=0);
     }
 }

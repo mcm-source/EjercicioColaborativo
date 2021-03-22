@@ -52,7 +52,7 @@ public class Pila {
         }
     }
 
-    public NodoAlumno VerElementoSuperior(NodoAlumno top){
+    public static NodoAlumno verElementoSuperior(NodoAlumno top){
         NodoAlumno info=null;
         if(top==null){
             return null;
@@ -61,7 +61,7 @@ public class Pila {
         }
     }
 
-    public void verPila(NodoAlumno raiz){
+    public static void verPila(NodoAlumno raiz){
         Visualizacion.visualizacionCabeceraDatosAlumno();
         Visualizacion.visualizacionObjetoAlumno(raiz);
     }

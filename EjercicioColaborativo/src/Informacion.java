@@ -25,8 +25,10 @@ public class Informacion {
  Cola y menú cola
  Clase centro
 
- César:
+ César:  "apodo: CECA"
  Pila
+ Clase AulumnoInternacional
+ Clase Docente
 
  Martín:
  Arraylist

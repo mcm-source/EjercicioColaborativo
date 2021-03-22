@@ -85,12 +85,13 @@ public class MenusPrograma {
     }
 
     public static byte menuPila() {
-        return  Byte.parseByte(EntradaDatos.pedirDatosString("******** Menu principal ***********" +
+        return Byte.parseByte(EntradaDatos.pedirDatosString("******** Menu principal ***********" +
                 "\n1. Crear" +
                 "\n2. Insertar" +
                 "\n3. Borrar" +
-                "\n4. Modificar" +
-                "\n5. Listar"));
+                "\n4. visualizar" +
+                "\n5. Ver elemento superior" +
+                "\n0. Salir"));
 
     }
 

@@ -29,23 +29,10 @@ public class Cola {
     }
     
     public void insertar()throws IOException{
-        
-        String dni, codigo, nombreAlumno, numeroTelefono, nombreModulo1, nombreModulo2;
-        float notaModulo1, notaModulo2;
-        
-        NodoAlumno nuevoNodoAlumno;
+                
+        NodoAlumno nuevoNodoAlumno=(NodoAlumno) EntradaDatos.pedirDatosAlumno();
     //quiero añadir bucle para insertar más alumnos
-        dni=EntradaDatos.pedirDatosString("Introduzca DNI del alumno");
-        codigo=EntradaDatos.pedirDatosString("Introduzca el código del alumno");
-        nombreAlumno=EntradaDatos.pedirDatosString("Introduzca el nombre del alumno");
-        numeroTelefono=EntradaDatos.pedirDatosString("Introduzca el número de teléfono");
-        nombreModulo1=EntradaDatos.pedirDatosString("Introduzca el nombre del módulo 1");
-        notaModulo1=Float.parseFloat(EntradaDatos.pedirDatosString("Introduzca la nota del módulo 1"));
-        nombreModulo2=EntradaDatos.pedirDatosString("Introduzca el nombre del módulo 2");
-        notaModulo2=Float.parseFloat(EntradaDatos.pedirDatosString("Introduzca la nota del módulo 2"));
 
-        nuevoNodoAlumno=new NodoAlumno(codigo,nombreModulo1,notaModulo1,nombreModulo2,notaModulo2,nombreAlumno,dni,numeroTelefono);
-        
         if(raiz==null){     //si  vacia
             raiz=nuevoNodoAlumno;
         }else{  //si cola con elementos

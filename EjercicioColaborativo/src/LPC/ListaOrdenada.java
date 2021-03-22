@@ -1,4 +1,6 @@
-import NodoALumno;
+package LPC;
+
+import static Metodos.MenusPrograma.pedirValidacion;
 
 public class ListaOrdenada {
 
@@ -11,7 +13,7 @@ public class ListaOrdenada {
         if (p == null) {
             p = nodoInsertar;
         } else {
-            while (actual != null && nodoInsertar.getNombreAlumno().compareToIgnoreCase(actual.getNombreAlumno()) > 0) {
+            while (actual != null && nodoInsertar.getNombre().compareToIgnoreCase(actual.getNombre()) > 0) {
                 anterior = actual;
                 actual = actual.getSiguiente();
             }
@@ -35,14 +37,14 @@ public class ListaOrdenada {
         if (p == null) {
             System.out.println("La lista se encuentra vacia");
         } else {
-            while (actual != null && !nombreAlumnoBorrar.equals(actual.getNombreAlumno())) {
+            while (actual != null && !nombreAlumnoBorrar.equals(actual.getNombre())) {
                 anterior = actual;
                 actual = actual.getSiguiente();
             }
             if (actual == null) {
                 System.out.println("El elemento no se encuentra en la lista");
             } else {
-                if (pedirValidacion("Desea eliminar al alumno " + actual.getNombreAlumno())) {
+                if (pedirValidacion("Desea eliminar al alumno " + actual.getNombre())) {
 
                     if (anterior != actual) {
                         anterior.setSiguiente(actual.getSiguiente());

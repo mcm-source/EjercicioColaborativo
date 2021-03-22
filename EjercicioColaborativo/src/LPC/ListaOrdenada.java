@@ -1,4 +1,4 @@
-import NodoALumno.NodoAlumno;
+import NodoALumno;
 
 public class ListaOrdenada {
 

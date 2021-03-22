@@ -28,6 +28,7 @@ public class MenusPrograma {
                     + "\n2. Usar lista"
                     + "\n3. Usar cola"
                     + "\n4. Usar pila"
+                    + "\n5. Información"
                     + "\n0. Salir"
                     + "\nIntroduce la opción deseada: ");
 

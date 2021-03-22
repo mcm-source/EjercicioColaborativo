@@ -63,6 +63,11 @@ public class EjercicioColaborativo {
                 case 4://Usar pila"
 
                     break;
+                
+                case 5://Informacion"
+                    Informacion.Informacion();
+                    break;
+                    
                 default:
                     op = 0;
                     break;

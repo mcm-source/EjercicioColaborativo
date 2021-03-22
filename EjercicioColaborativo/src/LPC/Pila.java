@@ -9,7 +9,7 @@ import java.io.IOException;
 /**@author CECA */
 public class Pila {
     public static NodoAlumno crear(NodoAlumno p,BufferedReader leer) throws IOException{
-        System.out.println("Desea crear lista nueva?"
+        System.out.println("Desea crear pila nueva?"
                 +"\n1.si"
                 +"\n2.no");
         byte op=Byte.parseByte(leer.readLine());
@@ -20,13 +20,12 @@ public class Pila {
         return p;
     }
 
-    public static NodoAlumno insertar(NodoAlumno raiz,BufferedReader leer) throws IOException{
+    public static NodoAlumno push(NodoAlumno raiz, BufferedReader leer) throws IOException{
         String dni,nombreAlumno,codigo,nombreModulo1,nombreModulo2,telefono;
         float notaModulo1,notaModulo2;
         boolean annadirmas=false;
         NodoAlumno nuevoNodoAlumno;
 
-        //En caso de dar de alta masiva de alumnos
       /*  System.out.printf("Introducir nombre de alumno, pulse/escribir fin para finalizacion");
         nombreAlumno=leer.readLine();
         while(nombreAlumno.compareToIgnoreCase("fin")!=0){
@@ -50,10 +49,31 @@ public class Pila {
             dni=EntradaDatos.pedirDatosString("Introduce nombre del alumno");
             telefono=EntradaDatos.pedirDatosString("Introdice telefono");
             nuevoNodoAlumno=new NodoAlumno(codigo,nombreModulo1,notaModulo1,nombreModulo2,notaModulo2,nombreAlumno,dni,telefono);
+            nuevoNodoAlumno.setSiguiente(raiz);
+            raiz=nuevoNodoAlumno;
             if(MenusPrograma.pedirValidacion("Finalizar?")){
             annadirmas=true;
             }
         }while(annadirmas==false);
     return nuevoNodoAlumno;
+    }
+
+    public static NodoAlumno pop(NodoAlumno raiz){
+        NodoAlumno info=null;
+        if(raiz==null){
+            return null;
+        }else{
+            raiz=raiz.getSiguiente();
+            return raiz;
+        }
+    }
+
+    public static NodoAlumno VerElementoSuperior(NodoAlumno top){
+        NodoAlumno info=null;
+        if(top==null){
+            return null;
+        }else{
+            return top;
+        }
     }
 }

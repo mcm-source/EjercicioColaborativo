@@ -1,13 +1,13 @@
 package LPC;
 import Metodos.EntradaDatos;
 import Metodos.MenusPrograma;
-
-import java.awt.*;
+import Metodos.Visualizacion;
 import java.io.BufferedReader;
 import java.io.IOException;
 
 /**@author CECA */
 public class Pila {
+
     public static NodoAlumno crear(NodoAlumno p,BufferedReader leer) throws IOException{
         System.out.println("Desea crear pila nueva?"
                 +"\n1.si"
@@ -20,11 +20,16 @@ public class Pila {
         return p;
     }
 
-    public static NodoAlumno push(NodoAlumno raiz, BufferedReader leer) throws IOException{
-        String dni,nombreAlumno,codigo,nombreModulo1,nombreModulo2,telefono;
-        float notaModulo1,notaModulo2;
-        boolean annadirmas=false;
-        NodoAlumno nuevoNodoAlumno;
+    public void push(NodoAlumno raiz) throws IOException{
+        NodoAlumno nuevoNodoAlumno=(NodoAlumno) EntradaDatos.pedirDatosAlumno();
+                if(raiz ==null){
+                    raiz= nuevoNodoAlumno;
+                    raiz.setSiguiente(null);
+                }else{
+                    nuevoNodoAlumno.setSiguiente(raiz);
+                    raiz= nuevoNodoAlumno;
+                }
+            }
 
       /*  System.out.printf("Introducir nombre de alumno, pulse/escribir fin para finalizacion");
         nombreAlumno=leer.readLine();
@@ -39,41 +44,27 @@ public class Pila {
             System.out.println("alumno creado");
         }*/
 
-        do{
-            codigo=EntradaDatos.pedirDatosString("Introduce nombre");
-            nombreModulo1=EntradaDatos.pedirDatosString("Introduce nombre del modulo 1");
-            notaModulo1=Float.parseFloat(EntradaDatos.pedirDatosString("Introduce nota del modulo 1"));
-            nombreModulo2=EntradaDatos.pedirDatosString("Introduce nombre del modulo 2");
-            notaModulo2=Float.parseFloat(EntradaDatos.pedirDatosString("Introduce nota del modulo 2"));
-            nombreAlumno=EntradaDatos.pedirDatosString("Introduce nombre del alumno");
-            dni=EntradaDatos.pedirDatosString("Introduce nombre del alumno");
-            telefono=EntradaDatos.pedirDatosString("Introdice telefono");
-            nuevoNodoAlumno=new NodoAlumno(codigo,nombreModulo1,notaModulo1,nombreModulo2,notaModulo2,nombreAlumno,dni,telefono);
-            nuevoNodoAlumno.setSiguiente(raiz);
-            raiz=nuevoNodoAlumno;
-            if(MenusPrograma.pedirValidacion("Finalizar?")){
-            annadirmas=true;
-            }
-        }while(annadirmas==false);
-    return nuevoNodoAlumno;
-    }
+    public void pop(NodoAlumno raiz){
 
-    public static NodoAlumno pop(NodoAlumno raiz){
         NodoAlumno info=null;
         if(raiz==null){
-            return null;
+            System.out.println("No existe el elemento");
         }else{
             raiz=raiz.getSiguiente();
-            return raiz;
         }
     }
 
-    public static NodoAlumno VerElementoSuperior(NodoAlumno top){
+    public NodoAlumno VerElementoSuperior(NodoAlumno top){
         NodoAlumno info=null;
         if(top==null){
             return null;
         }else{
             return top;
         }
+    }
+
+    public void verPila(NodoAlumno raiz){
+        Visualizacion.visualizacionCabeceraDatosAlumno();
+        Visualizacion.visualizacionObjetoAlumno(raiz);
     }
 }

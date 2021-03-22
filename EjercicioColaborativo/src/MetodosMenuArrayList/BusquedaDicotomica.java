@@ -39,7 +39,7 @@ public class BusquedaDicotomica {
         } else {
             System.out.println("\n\nEl elemento no se encuentra en la busqueda");
         }
-
+        
     }
 
 }

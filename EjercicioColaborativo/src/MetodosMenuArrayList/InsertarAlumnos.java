@@ -8,6 +8,7 @@ package MetodosMenuArrayList;
 import Clases.Alumno;
 import Metodos.EntradaDatos;
 import static Metodos.EntradaDatos.pedirDatosAlumno;
+import static Metodos.MenusPrograma.pedirValidacion;
 import java.util.ArrayList;
 
 /**
@@ -19,8 +20,11 @@ public class InsertarAlumnos {
     
     public static ArrayList<Alumno> insertarAlumno(ArrayList<Alumno> listadoAlumnos) {
 
-        listadoAlumnos.add(pedirDatosAlumno());
-
+        do{
+          listadoAlumnos.add(pedirDatosAlumno());
+  
+        }while(pedirValidacion("¿ Desea introducir un nuevo alumno ?"));
+      
         return listadoAlumnos;
     }
 

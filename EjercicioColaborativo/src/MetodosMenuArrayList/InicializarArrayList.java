@@ -16,7 +16,10 @@ public class InicializarArrayList {
 
     public  static  ArrayList<Alumno> inicializarValoresListadoAlumno(ArrayList<Alumno> listadoAlumno) {
 
-        listadoAlumno.clear();
+        if (listadoAlumno!=null) {
+             listadoAlumno.clear();
+        }
+       
         return listadoAlumno;
 
     }

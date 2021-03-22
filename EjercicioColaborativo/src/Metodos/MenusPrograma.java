@@ -27,8 +27,8 @@ public class MenusPrograma {
                     + "\n4. Usar pila"
                     + "\n0. Salir"
                     + "\nIntroduce la opción deseada: ");
-            byte opcionMenu = Byte.parseByte(leer.readLine());
-            return opcionMenu;
+            
+            return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
             return 0;
@@ -37,20 +37,19 @@ public class MenusPrograma {
     }
     
     
-    public static byte menu() {
+    public static byte menuArrayList() {
 
         try {
             BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("******** Menu programa ***********");
+            System.out.println("%n%n******** Menu programa ***********");
             System.out.println("1.Inicializar el listado de los alumnos ");
             System.out.println("2.Insertar alumnos en el ArrayList");
             System.out.println("3.Ordenar los alumnos por nombre");
             System.out.println("4.Busqueda de alumno por nombre");
             System.out.println("5.Visualizacion del arrayList de alumnos");
-            System.out.println("0.Salir.");
+            System.out.println("6.Salir.");
             System.out.println("\nIntroduce la opcion deseada:");
-            byte opcionMenu = Byte.parseByte(leer.readLine());
-            return opcionMenu;
+            return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
             return 0;
@@ -70,8 +69,8 @@ public class MenusPrograma {
                     + "\n3. Borrar"
                     + "\n0. Salir"
                     + "\nIntroduce la opción deseada: ");
-            byte opcion = Byte.parseByte(leer.readLine());
-            return opcion;
+            
+            return Byte.parseByte(leer.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
             return 0;

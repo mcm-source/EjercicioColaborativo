@@ -8,7 +8,9 @@ package ejerciciocolaborativo;
 import Clases.Alumno;
 import LPC.Cola;
 import Metodos.MenusPrograma;
-import static Metodos.MenusPrograma.menu;
+import static Metodos.MenusPrograma.menuArrayList;
+import static Metodos.MenusPrograma.menuCola;
+import static Metodos.MenusPrograma.menuPrincipal;
 import MetodosMenuArrayList.BusquedaDicotomica;
 import static MetodosMenuArrayList.BusquedaDicotomica.buscarAlumno;
 import MetodosMenuArrayList.InicializarArrayList;
@@ -27,27 +29,27 @@ import java.util.logging.Logger;
  * @author marti
  */
 public class EjercicioColaborativo {
-    
+
     private static Cola cola = new Cola();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        /** @author Beatriz*/
-        byte op=0;
-        
-        do{
-            op=MenusPrograma.menuPrincipal();
-            switch(op){
-                case 1://Usar ArrayList"
-                    trabajarArrayList();
+
+        ArrayList<Alumno> listadoAlumnos = new ArrayList<Alumno>();
+        byte op = 0;
+
+        do {
+
+            switch (menuPrincipal()) {
+                case 1://Usar menuArrayList"
+                    listadoAlumnos = menuArrayList(listadoAlumnos);
                     break;
                 case 2://Usar lista"
-                    
+
                     break;
-                case 3:{
+                case 3: {
                     try {
                         //Usar cola"
                         trabajarCola();
@@ -58,24 +60,22 @@ public class EjercicioColaborativo {
                 }
 
                 case 4://Usar pila"
-                    
+
                     break;
                 default:
                     op = 0;
                     break;
             }
-        }while (op!=0);
-       
+        } while (op != 0);
 
     }
 
-    public static void trabajarArrayList(){
-         ArrayList<Alumno> listadoAlumnos = null;
+    public static ArrayList<Alumno> menuArrayList(ArrayList<Alumno> listadoAlumnos) {
 
-        byte opcion = 0;
+        boolean ejecutarPrograma = true;
         do {
-            opcion = MenusPrograma.menu();
-            switch (opcion) {
+
+            switch (MenusPrograma.menuArrayList()) {
                 case 1:
                     listadoAlumnos = inicializarValoresListadoAlumno(listadoAlumnos);
                     break;
@@ -91,24 +91,29 @@ public class EjercicioColaborativo {
                 case 5:
                     visualizarListadoAlumnos(listadoAlumnos);
                     break;
-                case 0:
+                case 6:
+                    System.out.println("Fin del programa");
+                    ejecutarPrograma = false;
                     break;
                 default:
-                    opcion = 0;
+                    System.out.println("\n\nOpcion no valida, selecciona una opcion valida");
                     break;
 
             }
 
-        } while (opcion != 0);
+        } while (ejecutarPrograma);
+        return listadoAlumnos;
     }
-    
-    /** @author Beatriz*/
-    public static void trabajarCola() throws IOException{
-        byte op=0;
-        
-        do{
-            op=MenusPrograma.menuCola(); 
-            switch(op){
+
+    /**
+     * @author Beatriz
+     */
+    public static void trabajarCola() throws IOException {
+        byte op = 0;
+
+        do {
+
+            switch (menuCola()) {
                 case 1://Insertar
                     cola.insertar();
                     break;
@@ -122,6 +127,6 @@ public class EjercicioColaborativo {
                     op = 0;
                     break;
             }
-        }while (op!=0);
+        } while (op != 0);
     }
 }

@@ -84,6 +84,9 @@ public class MenusPrograma {
 
     }
 
+    /**
+     * @author CECA
+     */
     public static byte menuPila() {
         return Byte.parseByte(EntradaDatos.pedirDatosString("******** Menu principal ***********" +
                 "\n1. Crear" +
@@ -92,7 +95,6 @@ public class MenusPrograma {
                 "\n4. visualizar" +
                 "\n5. Ver elemento superior" +
                 "\n0. Salir"));
-
     }
 
 
